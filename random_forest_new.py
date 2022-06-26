@@ -29,7 +29,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3)
 print(X_train.shape)
 print(Y_train.shape)
 
-clf=RandomForestClassifier(n_estimators=5)
+clf=RandomForestClassifier(n_estimators=128,n_jobs=-1)
 clf.fit(X_train,Y_train)
 y_pred=clf.predict(X_test)
 print(y_pred)
