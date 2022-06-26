@@ -34,7 +34,16 @@ Y_move = data[['token']]
 # Y_move.info()
 # X_move.info()
 
+X_move['dx/dt'].replace([np.inf, -np.inf], np.nan, inplace=True)
+X_move['dx/dt'].dropna()
+
+X_move['dy/dt'].replace([np.inf, -np.inf], np.nan, inplace=True)
+X_move['dy/dt'].dropna()
+
+#print(X_move['dx/dt'].max())
+
 #Create train and test sets
+
 X_train, X_test, y_train, y_test = train_test_split(X_move, Y_move, test_size=0.3) # 70% training and 30% test
 
 #Create a Gaussian Classifier
