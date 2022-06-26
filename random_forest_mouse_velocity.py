@@ -28,7 +28,7 @@ for action in actions:
 move.info()
 # scroll.info()
 
-data = move[['dx/dt','dy/dt','token','global_position_x','global_position_y','dt','dx','dy']].dropna()
+data = move[['dx/dt','dy/dt','token']].dropna()
 X_move = data[['dx/dt','dy/dt']]
 Y_move = data[['token']]
 # Y_move.info()
